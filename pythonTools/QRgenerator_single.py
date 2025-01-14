@@ -1,9 +1,9 @@
 import qrcode
 from pathlib import Path
 
-product_name = 'voltageandfrequencyconverter'
-purchase_link = 'https://a.co/d/14IkI5h'
-folder_for_qrcodes = '/Users/davidgarcia/Downloads/qrcodes'
+product_name = 'SerialToEthernet'
+purchase_link = 'https://a.co/d/ix7Evev'
+folder_for_qrcodes = 'C:\\Users\\DavidGarcía\\Downloads\\Macbackup\\qrcodes'
 folder_path = Path(f'{folder_for_qrcodes}')
 
 # Check if the folder exists

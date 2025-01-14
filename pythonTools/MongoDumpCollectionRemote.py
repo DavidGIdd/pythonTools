@@ -28,7 +28,7 @@ def empty_collections(uri, database_name, collection_names):
 
 if __name__ == "__main__":
     # MongoDB connection URI
-    ip = "100.117.177.86"
+    ip = "100.122.218.21"
     uri = f"mongodb://{ip}:27017/"
 
     # Name of the database
