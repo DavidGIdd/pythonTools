@@ -1,9 +1,12 @@
 import qrcode
 from pathlib import Path
 
-product_name = 'KeyboardHostEthernetPOE'
-purchase_link = 'https://a.co/d/8aWhxcA'
+#THINGS THAT NEED TO BE CHANGED
+product_name = 'Prompter'
+purchase_link = 'https://a.co/d/b5NHzB6'
 folder_for_qrcodes = r'C:\Users\DavidGarcía\Downloads\Macbackup\qrcodes'  # Use raw string
+#ONLY THE product_name, purchase_link and folder_for_qrcodes
+
 folder_path = Path(folder_for_qrcodes)
 
 # Check if the folder exists

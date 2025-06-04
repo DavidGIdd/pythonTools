@@ -1,11 +1,10 @@
 
-
 import serial
 import time
 
 # Serial port settings
-PORT = "COM5"  # Replace with your serial port (e.g., COM3 on Windows, /dev/tty.usbmodem58750025271 on MAC )
-BAUD_RATE = 9600     # Default baud rate for Waveshare USB to LoRa
+PORT = "COM6"  # Replace with your serial port (e.g., COM3 on Windows, /dev/tty.usbmodem58750025271 on MAC )
+BAUD_RATE = 9600    # Default baud rate for Waveshare USB to LoRa
 TIMEOUT = 1              # Timeout for serial communication in seconds
 
 # Initialize the serial connection
@@ -22,7 +21,10 @@ def init_serial(port, baud_rate, timeout):
 def send_at_command(ser, command):
     if ser and ser.is_open:
         try:
-            ser.write((command + "\r\n").encode())  # Send the command with carriage return and newline
+            # ser.write((command + "\r\n").encode())  # Send the command with carriage return and newline
+            encoded_command = (command + "\r\n").encode()
+            print(f"Encoded message: {encoded_command}")  # Print the encoded bytes
+            ser.write(encoded_command)
             time.sleep(0.1)  # Small delay to allow device to respond
             response = ser.read(ser.in_waiting or 1).decode().strip()  # Read available data
             return response
@@ -86,14 +88,18 @@ def send_message(message,ser):
 
 def send_data(ser):
     print("\n--- Sending Data ---")
-    a = 1
+    a = "14221237"
+
+    # a = 1
     b = 2
     c = 3
     while True:
-        message = f"{a},{b},{c}"
+        # message = f"{a},{b},{c}"
+        message = f"{a},{b}"
+
         send_message(message,ser)
-        a += 1
-        b += 1
+        # a += 1
+        # b += 1
         c += 1
         time.sleep(1)
 
