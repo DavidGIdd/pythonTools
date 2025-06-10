@@ -21,7 +21,7 @@ try:
                 raw_data = ser.readline()
                 raw_clean_data = raw_data.decode(errors="ignore").strip().strip('\x00').strip('\xe1')
                 print(f"Raw Data: {raw_clean_data}")  # Debugging step
-
+                log_file.write(raw_clean_data + "\n")
                 log_file.flush()  # Ensure data is written to the file immediately
 
             time.sleep(0.1)
