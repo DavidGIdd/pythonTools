@@ -42,14 +42,20 @@ def send_at_command(ser, command):
 def query_config(ser):
     print("\n--- Querying Device Configuration ---")
     commands = {
-        "Address": "AT+ADDR?",
-        "Transmit Channel": "AT+TXCH?",
-        "Receive Channel": "AT+RXCH?",
-        "COM Baud Rate": "AT+BAUD?",
-        "COM Mode": "AT+COMM?",
-        "Power": "AT+PWR?",
         "Spreading Factor": "AT+SF?",
         "Bandwidth": "AT+BW?",
+        "Encoding Rate": "AT+CR?",
+        "Power": "AT+PWR?",
+        "Network ID": "AT+NETID?",
+        "LBT Function": "AT+LBT?",
+        "DTU Mode": "AT+MODE?",
+        "Transmit Channel": "AT+TXCH?",
+        "Receive Channel": "AT+RXCH?",
+        "RSSI Signal Value": "AT+RSSI?",
+        "Address": "AT+ADDR?",
+        "COM Port": "AT+PORT?",
+        "COM Baud Rate": "AT+BAUD?",
+        "COM Mode": "AT+COMM?",
         "Error Coding": "AT+CR?",
     }
     response = send_at_command(ser, "+++")
